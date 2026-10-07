@@ -7,11 +7,11 @@
     "start": { "cache": false, "persistent": true, "env": ["API_URL", "APP_NAME", "PORT", "UVICORN_PORT"] },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**"],
+      "outputs": [".next/**", "!.next/cache/**", "next-env.d.ts"],
       "env": ["API_URL"]
     },
     "lint": { "dependsOn": ["^lint"], "outputs": [] },
-    "typecheck": { "dependsOn": ["^typecheck"], "outputs": [".next/types/**"], "env": ["API_URL"] },
+    "typecheck": { "dependsOn": ["^typecheck"], "outputs": [".next/types/**", "next-env.d.ts"], "env": ["API_URL"] },
     "test": { "dependsOn": ["^build"], "outputs": [], "env": ["APP_NAME"] }
   }
 }

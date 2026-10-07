@@ -1,7 +1,7 @@
 # FastAPI + Next.js + Turborepo 템플릿 설계
 
 작성일: 2026-10-07
-상태: 사용자 검토용 초안
+상태: 사용자 승인 후 구현
 
 ## 목적과 범위
 
@@ -62,7 +62,7 @@ FastAPI는 앱 팩토리, 환경 설정, `/api/health`, `/docs`를 제공한다.
 - `pnpm build`: Next.js 프로덕션 빌드. Python 서비스에 가짜 빌드 단계를 만들지 않는다.
 - `pnpm lint`: 웹 ESLint, API Ruff 검사 및 포맷 검사.
 - `pnpm typecheck`: 웹 Next.js 타입 생성 및 TypeScript 검사.
-- `pnpm test`: API pytest. 웹 연결은 실제 서버를 통한 통합 확인으로 검증한다.
+- `pnpm test`: API pytest 및 실제 로컬 HTTP 서버를 이용한 웹 API 응답 검증. 앱 간 연결은 실행 중인 서버를 통한 통합 확인으로 검증한다.
 - `pnpm start`: 웹 프로덕션 서버와 API 실행; 캐시 비활성화.
 
 Turbo는 공유 설정 의존 관계를 추적하고 웹 빌드 결과는 `.next/**`에서 `.next/cache/**`를 제외해 저장한다. API 작업에는 Python 소스, pyproject.toml 및 uv.lock 변경이 캐시 키에 반영되어야 한다. 설정에 영향을 주는 환경 변수와 .env 파일을 해시에 반영한다. CI는 잠금 파일을 변경하지 않는 설치를 사용한다.

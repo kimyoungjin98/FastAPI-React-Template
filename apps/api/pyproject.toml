@@ -1,0 +1,28 @@
+[project]
+name = "fastapi-nextjs-template-api"
+version = "0.1.0"
+description = "FastAPI service for the Turborepo starter template"
+requires-python = ">=3.12"
+dependencies = [
+    "fastapi>=0.115,<1.0",
+    "pydantic-settings>=2.6,<3.0",
+    "uvicorn[standard]>=0.34,<1.0",
+]
+
+[dependency-groups]
+dev = ["httpx>=0.28,<1.0", "pytest>=8,<10", "ruff>=0.9,<1.0"]
+
+[tool.uv]
+package = false
+
+[tool.ruff]
+target-version = "py312"
+line-length = 100
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
+addopts = "-q"

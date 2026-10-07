@@ -1,0 +1,11 @@
+{
+  "name": "@repo/api",
+  "private": true,
+  "scripts": {
+    "setup": "uv sync --locked",
+    "dev": "uv run --locked uvicorn app.main:app --host 127.0.0.1 --reload",
+    "start": "uv run --locked uvicorn app.main:app --host 0.0.0.0",
+    "lint": "uv run --locked ruff check . && uv run --locked ruff format --check .",
+    "test": "uv run --locked pytest"
+  }
+}

@@ -1,0 +1,4 @@
+interface:
+  display_name: "codebase-save"
+  short_description: "프로젝트 작업 패턴과 아키텍처를 찾아 하나씩 확인받고 승인한 항목만 저장"
+  default_prompt: "$codebase-save로 프로젝트 작업 패턴과 아키텍처를 찾아 하나씩 저장 여부를 물어봐줘."

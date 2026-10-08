@@ -1,17 +1,17 @@
 {
   "$schema": "https://turborepo.dev/schema.json",
-  "globalDependencies": ["**/.env", "**/.env.*"],
+  "globalDependencies": ["**/.env", "**/.env.*", "scripts/uv.mjs"],
   "tasks": {
     "setup": { "cache": false },
     "dev": { "cache": false, "persistent": true, "env": ["API_URL", "APP_NAME", "PORT", "UVICORN_PORT"] },
     "start": { "cache": false, "persistent": true, "env": ["API_URL", "APP_NAME", "PORT", "UVICORN_PORT"] },
     "build": {
       "dependsOn": ["^build"],
-      "outputs": [".next/**", "!.next/cache/**", "next-env.d.ts"],
+      "outputs": ["dist/**"],
       "env": ["API_URL"]
     },
     "lint": { "dependsOn": ["^lint"], "outputs": [] },
-    "typecheck": { "dependsOn": ["^typecheck"], "outputs": [".next/types/**", "next-env.d.ts"], "env": ["API_URL"] },
+    "typecheck": { "dependsOn": ["^typecheck"], "outputs": [] },
     "test": { "dependsOn": ["^build"], "outputs": [], "env": ["APP_NAME"] }
   }
 }

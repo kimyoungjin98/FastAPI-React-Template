@@ -2,10 +2,10 @@
   "name": "@repo/api",
   "private": true,
   "scripts": {
-    "setup": "uv sync --locked",
-    "dev": "uv run --locked uvicorn app.main:app --host 127.0.0.1 --reload",
-    "start": "uv run --locked uvicorn app.main:app --host 0.0.0.0",
-    "lint": "uv run --locked ruff check . && uv run --locked ruff format --check .",
-    "test": "uv run --locked pytest"
+    "setup": "node ../../scripts/uv.mjs sync --locked",
+    "dev": "node ../../scripts/uv.mjs run --locked uvicorn src.main:app --host 127.0.0.1 --port 8001 --reload",
+    "start": "node ../../scripts/uv.mjs run --locked uvicorn src.main:app --host 0.0.0.0 --port 8001",
+    "lint": "node ../../scripts/uv.mjs run --locked ruff check . && node ../../scripts/uv.mjs run --locked ruff format --check .",
+    "test": "node ../../scripts/uv.mjs run --locked pytest"
   }
 }

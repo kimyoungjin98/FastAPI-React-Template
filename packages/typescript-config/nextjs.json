@@ -1,9 +1,0 @@
-{
-  "extends": "./base.json",
-  "compilerOptions": {
-    "allowJs": true,
-    "jsx": "react-jsx",
-    "incremental": true,
-    "plugins": [{ "name": "next" }]
-  }
-}

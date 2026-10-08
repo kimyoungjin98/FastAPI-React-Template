@@ -3,7 +3,7 @@ import asyncio
 import httpx
 from fastapi import FastAPI
 
-from app.main import create_app
+from src.main import create_app
 
 
 async def get(application: FastAPI, path: str) -> httpx.Response:

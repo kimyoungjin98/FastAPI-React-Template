@@ -3,7 +3,12 @@
   "version": "0.0.0",
   "private": true,
   "type": "module",
-  "exports": { "./nextjs": "./nextjs.mjs" },
-  "dependencies": { "eslint-config-next": "16.4.0" },
+  "exports": { "./react": "./react.mjs" },
+  "dependencies": {
+    "@eslint/js": "9.39.5",
+    "eslint-plugin-react-hooks": "7.1.1",
+    "eslint-plugin-react-refresh": "0.5.7",
+    "typescript-eslint": "8.71.1"
+  },
   "peerDependencies": { "eslint": "^9.0.0", "typescript": "^5.0.0" }
 }
